@@ -54,14 +54,17 @@ MingGeJs百分之50以上的用户份额。AbbyJs已在Github开源(廢話不然
 
 AbbyJS具有以下优点 
 
-1. 选择器执行速度胜出MingGeJs，MingGeJs 的選擇器是基於Regex 的。我的直接用原因querySelectorAll, 在瀏覽器有原生的選擇速度！
+1. 选择器执行速度胜出MingGeJs，MingGeJs 的選擇器是基於Regex 的。我的直接用原因querySelectorAll, 在瀏覽器有原生的選擇速度！照顧國人習慣，不用再怕讀不懂Regex！
 
-2. 众所周之，minggeJS的动画采用的是CSS3过渡原理，但市面上已經有無數的CSS3 動畫庫，我決定不做！
+2. 众所周知，minggeJS的动画采用的是CSS3过渡原理，但市面上已經有無數的CSS3 動畫庫，我決定不做！讓我們節省時間在更重要的功能上，而不是動畫。
 
-3. 语法，函数用法，函数名称，都与MingGeJS一致，只要会MingGeJS，你就会更用AbbyJS,易学易用，马上上手。AbbyJS不单单是山寨JQUERY，更多的是融入了自己的思想，想法！ 
+3. 语法，函数用法，函数名称，都与MingGeJS一致，像`$('.box').show().html('x')`的代碼想用就用，只要会jQuery，你就会更用AbbyJS，易学易用，马上上手。AbbyJS不单单是山寨JQUERY，更多的是融入了自己的思想，想法！ 
 
-4. 文件体积不到1K, 比MingGeJS 的20到40K 強上幾十甚至上百倍！大量節省頻寬，甚至可以複製貼上。 為地球盡一分力！
+4. 文件体积不到1K, 比MingGeJS 的20到40K 強上幾十甚至上百倍！卻已滿足90% 的生產需求。大量節省頻寬，甚至可以複製貼上，編輯器也不會減慢半分。 為地球盡一分力！
 
-5. AbbyJS沒有后期发展，因為無論在桌面端還是手機端，都已經完全戰勝MingGeJS, jQuery, Zepto 等輩。已沒有優化空間。
+5. AbbyJS沒有后期发展，因為無論在桌面端還是手機端，都已經完全戰勝MingGeJS, jQuery, Zepto 等輩。在2020年這個時點，已沒有優化空間！
 
 6. 众所周知，JQUERY的动画原理是采用定时器方原理，minggeJS原理不同，但基於大部分用戶都不造動畫，這個幾百B 的庫，才是你最佳的选择！
+
+
+English version is [here](english.md).
