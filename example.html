@@ -1,0 +1,28 @@
+<div class='box'></div>
+<div class='box2'></div>
+<div id='box2'></div>
+<button onclick="$('.box').hide()">hide</button>
+<button onclick="$('.box').show().html('x')">show</button>
+<script>
+    $.get(
+        'https://jsonplaceholder.typicode.com/todos/1',
+        {a:123},
+        (res)=>{
+            $(".box").html(res.title)
+        }
+    )
+    $.get(
+        'https://jsonplaceholder.typicode.com/todos/2',
+        {a:123},
+        (res)=>{
+            $("#box2").html(res.title)
+        }
+    )
+    $.post(
+        'https://jsonplaceholder.typicode.com/posts',
+        {title:123},
+        (res)=>{
+            $(".box2").html(JSON.stringify(res))
+        }
+    )
+</script>
