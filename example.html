@@ -2,8 +2,23 @@
 <div class='box'></div>
 <div class='box2'></div>
 <div id='box2'></div>
+<div id='box3'>
+    <div class='x'></div>
+    <div class='x'></div>
+</div>
 <button onclick="$('.box').hide()">hide</button>
 <button onclick="$('.box').show().html('x')">show</button>
+<template id='login'>
+    <h1>Login</h1>
+    <input type="text" /><br />
+    <input type="password" id='title' /><br />
+    <input type="Submit" />
+</template>
+<template id='good'>
+    <span class='title'>Login</span><br />  
+</template>
+<div id='container0'></div>
+<div id='container'></div>
 <script>
     $.get(
         'https://jsonplaceholder.typicode.com/todos/1',
@@ -26,4 +41,13 @@
             $(".box2").html(JSON.stringify(res))
         }
     )
+    $.get('https://jsonplaceholder.typicode.com/posts',{},(res)=>{
+        res.forEach((v)=>{
+            $('#container0').appendAll(
+                $.template('#good').find(".title").html(v.title)
+            )
+        })
+    });
+    $('#box3').find(".x").html("ok");
+    $('#container').mimic('#login').find("input[type=text]").val("username");
 </script>
