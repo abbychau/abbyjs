@@ -19,7 +19,6 @@ $=(x)=>new O(document.querySelectorAll(x))
 fetcher=(x,method,p,cb,h)=>{
     o={method,headers:h??{"Content-Type":"application/json"}}
     if(Object.keys(p).length){
-        console.log(p)
         if(method==="POST"){o.body = JSON.stringify(p)}
         else{x+="?"+new URLSearchParams(p).toString()}
     }
