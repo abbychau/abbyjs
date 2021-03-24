@@ -22,9 +22,13 @@
 <script>
     $.get(
         'https://jsonplaceholder.typicode.com/todos/1',
-        {a:123},
+        {},
         (res)=>{
             $(".box").html(res.title)
+        },
+        {
+            'aaaa':"asdf",
+            'Content-type':'application/json;charset=UTF-8'
         }
     )
     $.get(
