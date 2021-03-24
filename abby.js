@@ -18,7 +18,6 @@ O.prototype = {
 $=(x)=>new O(document.querySelectorAll(x))
 ex=(q)=>q!=null&&q!=undefined&&q!=[]&&Object.keys(q).length>0
 fetcher=(x,method,qs,body,cb,h)=>{
-    console.log(body)
     o={method,headers:h??{"Content-Type":"application/json"}}
     if(ex(body)){o.body = JSON.stringify(body)}
     if(ex(qs)){x+="?"+new URLSearchParams(qs).toString()}
