@@ -20,16 +20,20 @@
 <div id='container0'></div>
 <div id='container'></div>
 <script>
-    $.get(
-        'https://jsonplaceholder.typicode.com/todos/1',
-        {},
-        (res)=>{
-            $(".box").html(res.title)
-        },
-        {
+    $.ajax(
+        'https://jsonplaceholder.typicode.com/posts',
+        {method:"POST",headers:{
             'aaaa':"asdf",
             'Content-type':'application/json;charset=UTF-8'
-        }
+        },query:{
+            "a":"asdf"
+        },body:{
+            "post":"ok"
+        }},
+        (res)=>{
+            $(".box").html(JSON.stringify(res))
+        },
+        
     )
     $.get(
         'https://jsonplaceholder.typicode.com/todos/2',

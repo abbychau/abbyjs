@@ -16,16 +16,17 @@ O.prototype = {
     born:      function(ts)  {return this.append($(ts).ele().content.cloneNode(true))},
 };
 $=(x)=>new O(document.querySelectorAll(x))
-fetcher=(x,method,p,cb,h)=>{
+ex=(q)=>q!=null&&q!=undefined&&q!=[]&&Object.keys(q).length>0
+fetcher=(x,method,qs,body,cb,h)=>{
+    console.log(body)
     o={method,headers:h??{"Content-Type":"application/json"}}
-    if(Object.keys(p).length){
-        if(method==="POST"){o.body = JSON.stringify(p)}
-        else{x+="?"+new URLSearchParams(p).toString()}
-    }
+    if(ex(body)){o.body = JSON.stringify(body)}
+    if(ex(qs)){x+="?"+new URLSearchParams(qs).toString()}
     fetch(x,o).then(res=>res.json()).then(cb);
 }
-$.get =(u,p,c,h)=>fetcher(u,"GET", p,c,h)
-$.post=(u,p,c,h)=>fetcher(u,"POST",p,c,h)
+$.get =(u,q,c,h)=>fetcher(u,"GET", q,null,c,h)
+$.post=(u,b,c,h)=>fetcher(u,"POST",null,b,c,h)
+$.ajax=(u,all,c)=>fetcher(u,all.method??"GET",all.query,all.body,c,all.headers)
 $.template=(ts)=>new O($(ts).ele().content.cloneNode(true))
 window.$=$
 })()
