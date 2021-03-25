@@ -7,7 +7,7 @@ O.prototype = {
     append:    function(s)   {this.o.forEach(e=>e.append(s.ele?.()??s));return this},
     appendAll: function(eles){eles.o.forEach(e=>this.append(e));return this},
     prepend:   function(s)   {this.o.forEach(e=>e.prepend(s.ele?.()??s));return this},
-    val:       function(s)   {this.o.forEach(e=>e.value = s);return this},
+    val:       function(s)   {if(s){this.o.forEach(e=>e.value = s);return this}else{return this.ele().value}},
     set:       function(k,v) {this.o.forEach(e=>e.setAttribute(k,v));return this},
     get:       function(a)   {return this.o[0].getAttribute(a)},
     ele:       function( )   {return this.o[0]??this.o},
