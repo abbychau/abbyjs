@@ -26,7 +26,9 @@ fetcher=(x,method,qs,body,cb,h)=>{
     fetch(x,o).then(res=>res.json()).then(cb);
 }
 $.get =(u,q,c,h)=>fetcher(u,"GET", q,null,c,h)
+$.delete =(u,q,c,h)=>fetcher(u,"DELETE", q,null,c,h)
 $.post=(u,b,c,h)=>fetcher(u,"POST",null,b,c,h)
+$.put=(u,b,c,h)=>fetcher(u,"PUT",null,b,c,h)
 $.ajax=(u,all,c)=>fetcher(u,all.method??"GET",all.query,all.body,c,all.headers)
 $.template=(ts)=>new O($(ts).ele().content.cloneNode(true))
 window.$=$
