@@ -1,4 +1,14 @@
-<script src="./abby.js"></script>
+
+<html>
+<head>
+    <link rel="stylesheet" href="modal.css">
+</head>
+
+<body>
+
+<button onclick='openModal("test text")()'>Open Modal</button>
+
+
 <div class='box'></div>
 <div class='box2'></div>
 <div id='box2'></div>
@@ -19,6 +29,10 @@
 </template>
 <div id='container0'></div>
 <div id='container'></div>
+</body>
+
+<script src="./abby.js"></script>
+<script src="./modal.js"></script>
 <script>
     $.ajax(
         'https://jsonplaceholder.typicode.com/posts',
@@ -60,3 +74,4 @@
     $('#box3').find(".x").html("ok");
     $('#container').mimic('#login').find("input[type=text]").val("username");
 </script>
+</html>

@@ -1,8 +1,8 @@
 (()=>{
 function O(o){this.o = o;}
 O.prototype = {
-    hide:      function( )   {this.o.forEach(e=>e.style.visibility="hidden");return this},
-    show:      function( )   {this.o.forEach(e=>e.style.visibility="visible");return this},
+    hide:      function( )   {this.o.forEach(e=>e.style.display="none");return this},
+    show:      function(s)   {this.o.forEach(e=>e.style.display=s??"block");return this},
     html:      function(s)   {this.o.forEach(e=>e.innerHTML = s);return this},
     append:    function(s)   {this.o.forEach(e=>e.append(s.ele?.()??s));return this},
     appendAll: function(eles){eles.o.forEach(e=>this.append(e));return this},
@@ -10,8 +10,9 @@ O.prototype = {
     val:       function(s)   {this.o.forEach(e=>e.value = s);return this},
     set:       function(k,v) {this.o.forEach(e=>e.setAttribute(k,v));return this},
     get:       function(a)   {return this.o[0].getAttribute(a)},
-    ele:       function( )   {return this.o[0]},
-    find:      function(q)   {return new O((this.o[0]??this.o).querySelectorAll(q))},
+    ele:       function( )   {return this.o[0]??this.o},
+    eles:       function( )  {return this.o},
+    find:      function(q)   {return new O((this.o[0]??this.o)?.querySelectorAll(q))},
     mimic:     function(ts)  {this.ele().innerHTML='';return this.born(ts);},
     born:      function(ts)  {return this.append($(ts).ele().content.cloneNode(true))},
 };
