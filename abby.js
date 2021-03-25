@@ -3,7 +3,7 @@ function O(o){this.o = o;}
 O.prototype = {
     hide:      function( )   {this.o.forEach(e=>e.style.display="none");return this},
     show:      function(s)   {this.o.forEach(e=>e.style.display=s??"block");return this},
-    html:      function(s)   {this.o.forEach(e=>e.innerHTML = s);return this},
+    html:      function(s)   {if(s){this.o.forEach(e=>e.innerHTML = s);return this}else{return this.ele().innerHTML}},
     append:    function(s)   {this.o.forEach(e=>e.append(s.ele?.()??s));return this},
     appendAll: function(eles){eles.o.forEach(e=>this.append(e));return this},
     prepend:   function(s)   {this.o.forEach(e=>e.prepend(s.ele?.()??s));return this},

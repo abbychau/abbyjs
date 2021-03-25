@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="drawer.css">
 </head>
 
 <body>
@@ -29,11 +30,20 @@
 </template>
 <div id='container0'></div>
 <div id='container'></div>
+
+<div style='display:none' id='drawerContent'>
+    <a href="#home" onclick="closeNav()" id="home-link">Home</a>
+    <a href="#about" onclick="closeNav()" id="about-link">About Me</a>
+    <a href="#works" onclick="closeNav()" id="works-link">My WorkS</a>
+    <a href="#contact" onclick="closeNav()" id="contact-link">Contact Me</a>
+</div>
 </body>
 
 <script src="./abby.js"></script>
 <script src="./modal.js"></script>
+<script src="./drawer.js"></script>
 <script>
+    setupDrawer($("#drawerContent").html());
     $.ajax(
         'https://jsonplaceholder.typicode.com/posts',
         {method:"POST",
