@@ -6,8 +6,9 @@
 </head>
 
 <body>
+    <br /><br /><br /><br /><br />
 
-<button onclick='openModal("test text")()'>Open Modal</button>
+<button id='om'>Open Modal</button>
 
 
 <div class='box'></div>
@@ -43,7 +44,9 @@
 <script src="./modal.js"></script>
 <script src="./drawer.js"></script>
 <script>
+    
     setupDrawer($("#drawerContent").html());
+    $("#om").click(function(){openModal("test text")()})
     $.ajax(
         'https://jsonplaceholder.typicode.com/posts',
         {method:"POST",

@@ -11,10 +11,11 @@ O.prototype = {
     set:       function(k,v) {this.o.forEach(e=>e.setAttribute(k,v));return this},
     get:       function(a)   {return this.o[0].getAttribute(a)},
     ele:       function( )   {return this.o[0]??this.o},
-    eles:       function( )  {return this.o},
+    eles:      function( )   {return this.o},
     find:      function(q)   {return new O((this.o[0]??this.o)?.querySelectorAll(q))},
     mimic:     function(ts)  {this.ele().innerHTML='';return this.born(ts);},
     born:      function(ts)  {return this.append($(ts).ele().content.cloneNode(true))},
+    click:     function(f)   {this.ele().onclick=f;return this}
 };
 $=(x)=>new O(document.querySelectorAll(x))
 ex=(q)=>q!=null&&q!=undefined&&q!=[]&&Object.keys(q).length>0
