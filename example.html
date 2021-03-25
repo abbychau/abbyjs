@@ -46,7 +46,7 @@
 <script>
     
     setupDrawer($("#drawerContent").html());
-    $("#om").click(function(){openModal("test text")()})
+    $("#om").on('click',function(){openModal("test text")()})
     $.ajax(
         'https://jsonplaceholder.typicode.com/posts',
         {method:"POST",

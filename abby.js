@@ -15,7 +15,7 @@ O.prototype = {
     find:      function(q)   {return new O((this.o[0]??this.o)?.querySelectorAll(q))},
     mimic:     function(ts)  {this.ele().innerHTML='';return this.born(ts);},
     born:      function(ts)  {this.append($(ts).ele().content.cloneNode(true));return this},
-    click:     function(f)   {this.o.forEach(e=>e.onclick=f);return this}
+    on:        function(ev,f){this.o.forEach(e=>e.addEventListener(ev,f));return this}
 };
 $=(x)=>new O(document.querySelectorAll(x))
 ex=(q)=>q!=null&&q!=undefined&&q!=[]&&Object.keys(q).length>0
